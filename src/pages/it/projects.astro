@@ -1,0 +1,63 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import SectionHeading from "../../components/SectionHeading.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
+import { t } from "../../i18n/utils";
+import type { Lang } from "../../i18n/utils";
+
+const lang: Lang = "it";
+
+const projects = [
+  {
+    title: "FreeRTOS PTL",
+    description: t(lang, "projects.freertos.desc"),
+    tags: ["C", "FreeRTOS", "QEMU", "Embedded", "Real-Time"],
+    githubUrl: "https://github.com/Gianmarco-Fabbri/PTL-FreeRTOS",
+  },
+  {
+    title: "100 Days War",
+    description: t(lang, "projects.100days.desc"),
+    tags: ["Java", "OOP", "MVC", "Swing"],
+    githubUrl: "https://github.com/Gianmarco-Fabbri/OOP23-100DaysWar",
+  },
+  {
+    title: "Self Care E-shop",
+    description: t(lang, "projects.selfcare.desc"),
+    tags: ["PHP", "JavaScript", "CSS", "HTML"],
+    githubUrl: "https://github.com/Gianmarco-Fabbri/ProgettoWeb",
+  },
+  {
+    title: "Videogame Planet Shop",
+    description: t(lang, "projects.videogame.desc"),
+    tags: ["Python", "SQL", "Database", "GUI"],
+    githubUrl: "https://github.com/Gianmarco-Fabbri/VideogamePlanetShop",
+  },
+  {
+    title: "Portfolio Website",
+    description: t(lang, "projects.portfolio.desc"),
+    tags: ["Astro", "HTML", "CSS", "JavaScript", "GitHub Actions"],
+    githubUrl: "https://github.com/Gianmarco-Fabbri/portfolio",
+  },
+];
+---
+
+<Layout title={t(lang, "projects.title")} lang={lang}>
+  <section class="section page-section">
+    <div class="container">
+      <SectionHeading title={t(lang, "projects.heading")} subtitle={t(lang, "projects.subtitle")} />
+      <div class="projects-grid">
+        {projects.map((p, i) => (
+          <div class={`animate-in animate-delay-${i + 1}`}>
+            <ProjectCard title={p.title} description={p.description} tags={p.tags} githubUrl={p.githubUrl} />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-section { padding-top: calc(64px + 4rem); }
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+  @media (max-width: 768px) { .projects-grid { grid-template-columns: 1fr; } }
+</style>
