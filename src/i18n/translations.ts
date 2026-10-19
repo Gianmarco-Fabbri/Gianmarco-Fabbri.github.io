@@ -23,7 +23,7 @@ export const translations: Record<Lang, Record<string, string>> = {
     // Home — About preview
     "home.about.title": "Chi sono",
     "home.about.subtitle": "Uno sguardo rapido",
-    "home.about.text": "Sono uno studente magistrale di <strong>Cybersecurity Engineering</strong> al <strong>Politecnico di Torino</strong>, con una laurea triennale in Ingegneria e Scienze Informatiche all'Università di Bologna. Mi appassiona la <strong>sicurezza delle infrastrutture cloud e dell'AI</strong>: ho lavorato su runtime security e incident response automatizzata su Kubernetes, sistemi real-time e sviluppo web sicuro.",
+    "home.about.text": "Sono uno studente magistrale di <strong>Cybersecurity Engineering</strong> al <strong>Politecnico di Torino</strong>, con una laurea triennale in Ingegneria e Scienze Informatiche all'Università di Bologna. Mi appassiona la <strong>sicurezza delle infrastrutture cloud e dell'AI</strong>: sto approfondendo Kubernetes, Docker ed eBPF come piattaforma per i carichi di lavoro AI e come applicare i paradigmi della cybersecurity all'intelligenza artificiale.",
     "home.about.link": "Scopri di più",
 
     // Home — Projects preview
@@ -36,8 +36,8 @@ export const translations: Record<Lang, Record<string, string>> = {
     "about.heading": "Chi sono",
     "about.heading.sub": "Qualcosa su di me",
     "about.bio.1": "Ciao! Sono <strong>Gianmarco Fabbri</strong>, studente magistrale di <strong>Cybersecurity Engineering</strong> al <strong>Politecnico di Torino</strong>. Ho conseguito la laurea triennale in Ingegneria e Scienze Informatiche all'Università di Bologna, con una tesi sulla crittografia post-quantistica basata su reticoli.",
-    "about.bio.2": "Il percorso che mi appassiona di più è la <strong>sicurezza delle infrastrutture cloud e dell'intelligenza artificiale</strong>. Nei miei progetti ho lavorato su runtime security e incident response automatizzata su Kubernetes, sistemi real-time e sviluppo web sicuro, con autenticazione a due fattori e controllo degli accessi.",
-    "about.bio.3": "Ho svolto un tirocinio come software engineer in <strong>My Dev</strong>, dove ho sviluppato backend in C#/.NET e interfacce in Blazor. Mi interessa capire come proteggere le infrastrutture cloud e i sistemi di AI, e come applicare l'intelligenza artificiale alla cybersecurity.",
+    "about.bio.2": "Il percorso che mi appassiona di più è la <strong>sicurezza delle infrastrutture cloud e dell'AI</strong>. In questo momento il mio obiettivo è imparare a fondo l'infrastruttura cloud su cui girano i sistemi di intelligenza artificiale, in particolare <strong>Kubernetes, Docker ed eBPF</strong>, e capire come applicare a questi sistemi i paradigmi della cybersecurity.",
+    "about.bio.3": "Con i miei progetti universitari e personali ho messo in pratica runtime security e incident response su Kubernetes, sistemi real-time e applicazioni web con autenticazione a due fattori e controllo degli accessi. Ho anche svolto un tirocinio come software engineer in <strong>My Dev</strong>, lavorando su backend in C#/.NET e interfacce in Blazor.",
 
     "about.exp.title": "Esperienza",
     "about.exp.subtitle": "Il mio percorso lavorativo",
@@ -121,7 +121,7 @@ export const translations: Record<Lang, Record<string, string>> = {
     // Home — About preview
     "home.about.title": "About Me",
     "home.about.subtitle": "A quick glance",
-    "home.about.text": "I'm an M.Sc. <strong>Cybersecurity Engineering</strong> student at <strong>Politecnico di Torino</strong>, with a B.Sc. in Computer Science and Engineering from the University of Bologna. I'm passionate about <strong>cloud infrastructure and AI security</strong>: I've worked on Kubernetes runtime security and automated incident response, real-time systems, and secure web development.",
+    "home.about.text": "I'm an M.Sc. <strong>Cybersecurity Engineering</strong> student at <strong>Politecnico di Torino</strong>, with a B.Sc. in Computer Science and Engineering from the University of Bologna. I'm passionate about <strong>cloud infrastructure and AI security</strong>: I'm digging into Kubernetes, Docker, and eBPF as a platform for AI workloads, and into how to apply cybersecurity paradigms to artificial intelligence.",
     "home.about.link": "Learn more",
 
     // Home — Projects preview
@@ -134,8 +134,8 @@ export const translations: Record<Lang, Record<string, string>> = {
     "about.heading": "About Me",
     "about.heading.sub": "Something about me",
     "about.bio.1": "Hi! I'm <strong>Gianmarco Fabbri</strong>, an M.Sc. <strong>Cybersecurity Engineering</strong> student at <strong>Politecnico di Torino</strong>. I hold a B.Sc. in Computer Science and Engineering from the University of Bologna, with a thesis on lattice-based post-quantum cryptography.",
-    "about.bio.2": "The path I'm most passionate about is <strong>cloud infrastructure and AI security</strong>. In my projects I've worked on Kubernetes runtime security and automated incident response, real-time systems, and secure web development with two-factor authentication and access control.",
-    "about.bio.3": "I interned as a software engineer at <strong>My Dev</strong>, building C#/.NET backends and Blazor interfaces. I'm interested in how to protect cloud infrastructure and AI systems, and in applying artificial intelligence to cybersecurity.",
+    "about.bio.2": "The path I'm most passionate about is <strong>cloud infrastructure and AI security</strong>. Right now my goal is to learn in depth the cloud infrastructure that AI systems run on, especially <strong>Kubernetes, Docker, and eBPF</strong>, and to understand how to apply cybersecurity paradigms to those systems.",
+    "about.bio.3": "Through my university and personal projects I've put into practice Kubernetes runtime security and incident response, real-time systems, and web applications with two-factor authentication and access control. I also interned as a software engineer at <strong>My Dev</strong>, working on C#/.NET backends and Blazor interfaces.",
 
     "about.exp.title": "Experience",
     "about.exp.subtitle": "Where I've worked",
