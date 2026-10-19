@@ -23,16 +23,17 @@ The root `/` redirects to the Italian version.
 ```text
 src/
 ├── components/   # Navbar, Hero, Footer, ProjectCard, SectionHeading, SkillBadge
+├── data/         # profile.ts (projects, skills, contacts, links)
 ├── i18n/         # translations.ts (IT/EN strings) and utils.ts (t(), localized paths)
 ├── layouts/      # Layout.astro (head, navbar, footer)
 ├── pages/
 │   ├── index.astro   # redirect to /it/
-│   ├── it/           # Italian pages
-│   └── en/           # English pages
+│   └── [lang]/       # each page is generated once per language (/it/, /en/)
 └── styles/       # global.css (theme variables, buttons, animations)
 ```
 
-All user-facing text lives in `src/i18n/translations.ts`; each page sets its language and reads strings with `t(lang, "key")`.
+- **Text:** all user-facing strings live in `src/i18n/translations.ts`; pages read them with `t(lang, "key")`.
+- **Content:** projects, skills and contacts live in `src/data/profile.ts`. To add a project, add an entry there plus its `projects.<id>.desc` string in both languages; set `featured: true` to show it on the home page.
 
 ## Development
 

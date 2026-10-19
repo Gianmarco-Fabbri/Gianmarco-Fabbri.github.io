@@ -2,16 +2,19 @@
 import Layout from "../../layouts/Layout.astro";
 import SectionHeading from "../../components/SectionHeading.astro";
 import SkillBadge from "../../components/SkillBadge.astro";
-import { t } from "../../i18n/utils";
+import { t, getLangPaths } from "../../i18n/utils";
 import type { Lang } from "../../i18n/utils";
+import { skills as skillKeys } from "../../data/profile";
 
-const lang: Lang = "it";
+export function getStaticPaths() {
+  return getLangPaths();
+}
 
-const skills = {
-  [t(lang, "about.skills.cat.languages")]: ["C", "Python", "JavaScript", "TypeScript", "Bash", "SQL"],
-  [t(lang, "about.skills.cat.cyber")]: ["Network Analysis", "Penetration Testing", "Cryptography", "Reverse Engineering"],
-  [t(lang, "about.skills.cat.tools")]: ["FreeRTOS", "QEMU", "Git", "Docker", "Linux", "Astro", "Node.js"],
-};
+const lang = Astro.params.lang as Lang;
+
+const skills = Object.fromEntries(
+  Object.entries(skillKeys).map(([key, items]) => [t(lang, key), items]),
+);
 
 const education = [
   {
@@ -33,7 +36,6 @@ const education = [
   <section class="section page-section">
     <div class="container">
       <SectionHeading title={t(lang, "about.heading")} subtitle={t(lang, "about.heading.sub")} />
-
       <div class="about-bio">
         <p set:html={t(lang, "about.bio.1")} />
         <p>{t(lang, "about.bio.2")}</p>

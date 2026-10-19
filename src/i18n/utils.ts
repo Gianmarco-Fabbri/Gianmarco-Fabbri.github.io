@@ -10,6 +10,11 @@ export function getLangFromUrl(url: URL): Lang {
   return defaultLang;
 }
 
+/** Static paths for pages under src/pages/[lang]/ */
+export function getLangPaths() {
+  return (["it", "en"] as const).map((lang) => ({ params: { lang } }));
+}
+
 /** Get a translated string by key */
 export function t(lang: Lang, key: string): string {
   return translations[lang][key] ?? translations[defaultLang][key] ?? key;

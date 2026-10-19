@@ -1,0 +1,37 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import SectionHeading from "../../components/SectionHeading.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
+import { t, getLangPaths } from "../../i18n/utils";
+import type { Lang } from "../../i18n/utils";
+import { projects as allProjects } from "../../data/profile";
+
+export function getStaticPaths() {
+  return getLangPaths();
+}
+
+const lang = Astro.params.lang as Lang;
+
+const projects = allProjects.map((p) => ({ ...p, description: t(lang, p.descKey) }));
+---
+
+<Layout title={t(lang, "projects.title")} lang={lang}>
+  <section class="section page-section">
+    <div class="container">
+      <SectionHeading title={t(lang, "projects.heading")} subtitle={t(lang, "projects.subtitle")} />
+      <div class="projects-grid">
+        {projects.map((p, i) => (
+          <div class={`animate-in animate-delay-${i + 1}`}>
+            <ProjectCard title={p.title} description={p.description} tags={p.tags} githubUrl={p.githubUrl} />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-section { padding-top: calc(64px + 4rem); }
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+  @media (max-width: 768px) { .projects-grid { grid-template-columns: 1fr; } }
+</style>

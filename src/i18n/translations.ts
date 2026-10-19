@@ -5,10 +5,10 @@ export const translations: Record<Lang, Record<string, string>> = {
   it: {
     // Nav
     "nav.home": "Home",
-    "nav.about": "About",
-    "nav.projects": "Projects",
-    "nav.notes": "Notes",
-    "nav.contact": "Contact",
+    "nav.about": "Chi sono",
+    "nav.projects": "Progetti",
+    "nav.notes": "Note",
+    "nav.contact": "Contatti",
 
     // Hero
     "hero.greeting": "Ciao, mi chiamo",
@@ -20,7 +20,7 @@ export const translations: Record<Lang, Record<string, string>> = {
     // Home — About preview
     "home.about.title": "Chi Sono",
     "home.about.subtitle": "Uno sguardo rapido",
-    "home.about.text": "Sono uno studente di <strong>Cybersecurity Engineering</strong> al <strong>Politecnico di Torino</strong>. Mi appassiona tutto ciò che riguarda la sicurezza informatica, i sistemi operativi real-time e lo sviluppo di software robusto e performante.",
+    "home.about.text": "Sono uno studente di <strong>Cybersecurity Engineering</strong> al <strong>Politecnico di Torino</strong>. Mi occupo di sicurezza cloud e applicativa, rilevamento delle minacce a runtime e architetture software sicure.",
     "home.about.link": "Scopri di più",
 
     // Home — Projects preview
@@ -33,13 +33,14 @@ export const translations: Record<Lang, Record<string, string>> = {
     "about.heading": "Chi Sono",
     "about.heading.sub": "Qualcosa su di me",
     "about.bio.1": "Ciao! Sono <strong>Gianmarco Fabbri</strong>, studente di <strong>Cybersecurity Engineering</strong> al <strong>Politecnico di Torino</strong>.",
-    "about.bio.2": "Sono appassionato di sicurezza nel cloud, crime analysis e intelligenza artificiale. Affrontare problemi complessi mi stimola a dare il meglio e aspiro a trovare soluzioni eleganti ed efficienti.",
-    "about.bio.3": "Nel tempo libero esploro nuovi tool e mi tengo aggiornato sulle novità nel mio campo della cybersecurity.",
+    "about.bio.2": "Mi occupo di sicurezza cloud e applicativa, rilevamento delle minacce a runtime e architetture software sicure. Sviluppo applicazioni web full-stack con un approccio security-first, dall'autenticazione e il controllo degli accessi fino al deploy containerizzato.",
+    "about.bio.3": "Mi interessa unire l'ingegneria del software alla sicurezza offensiva e difensiva, e applicare l'intelligenza artificiale alla cybersecurity.",
     "about.skills.title": "Competenze",
     "about.skills.subtitle": "Tecnologie e strumenti che utilizzo",
     "about.skills.cat.languages": "Linguaggi",
     "about.skills.cat.cyber": "Cybersecurity",
-    "about.skills.cat.tools": "Tools & Frameworks",
+    "about.skills.cat.frameworks": "Framework e librerie",
+    "about.skills.cat.tools": "Database e strumenti",
     "about.edu.title": "Formazione",
     "about.edu.subtitle": "Il mio percorso accademico",
     "about.edu.1.period": "2024 — in corso",
@@ -49,14 +50,16 @@ export const translations: Record<Lang, Record<string, string>> = {
     "about.edu.2.period": "2021 — 2024",
     "about.edu.2.title": "Ingegneria e Scienze Informatiche (L-31)",
     "about.edu.2.institution": "Università di Bologna",
-    "about.edu.2.desc": "Laurea triennale in Ingegneria e Scienze informatiche. Basi di programmazione, sistemi operativi, reti e database.",
+    "about.edu.2.desc": "Laurea triennale in Ingegneria e Scienze Informatiche, con tesi sulla crittografia post-quantistica basata su reticoli.",
 
     // Projects page
     "projects.title": "Projects — Gianmarco Fabbri",
     "projects.heading": "Progetti",
     "projects.subtitle": "Raccolta dei miei progetti universitari e personali",
-    "projects.freertos.desc": "Sistema di scheduling timeline per FreeRTOS con supporto per task hard real-time, trace logging circolare e policy di overrun configurabili. Testato su QEMU ARM Cortex-M3.",
-    "projects.100days.desc": "Videogioco strategico a turni in Java con architettura MVC. Include mappa interattiva, gestione soldati, torri difensive, Bot avversario e sistema di salvataggio partita.",
+    "projects.k8s.desc": "Laboratorio accademico di runtime detection e incident response automatica su Kubernetes: Falco rileva le syscall sospette, un handler Python mette in quarantena il pod e le network policy di Cilium lo isolano. Include test di regressione e limiti di validazione espliciti.",
+    "projects.theater.desc": "Applicazione full-stack React ed Express per prenotare posti a teatro, con autenticazione a sessione, controllo degli accessi basato sui ruoli, TOTP per le azioni admin e controlli transazionali contro le prenotazioni in conflitto.",
+    "projects.freertos.desc": "Progetto di gruppo che aggiunge a FreeRTOS un layer per task periodici: scheduling periodico, controllo delle deadline e policy di overrun configurabili, con demo su QEMU ARM Cortex-M3 e test di regressione.",
+    "projects.100days.desc": "Gioco strategico a turni in Java/Swing sviluppato in un team di quattro persone. Ho curato le interazioni tra soldati, il bot avversario e le statistiche in tempo reale; il gioco include mappe procedurali, salvataggio delle partite e test automatici.",
     "projects.selfcare.desc": "E-commerce per prodotti di cura personale sviluppato come progetto di Tecnologie Web. Frontend dinamico in JavaScript con backend PHP e gestione dati lato server.",
     "projects.videogame.desc": "Applicazione gestionale per un negozio di videogiochi con interfaccia grafica in Python e database relazionale. Progetto universitario di DBMS con operazioni CRUD complete.",
     "projects.portfolio.desc": "Portfolio personale con animazioni, componenti riutilizzabili e deploy automatico su GitHub Pages tramite GitHub Actions.",
@@ -97,7 +100,7 @@ export const translations: Record<Lang, Record<string, string>> = {
     // Home — About preview
     "home.about.title": "About Me",
     "home.about.subtitle": "A quick glance",
-    "home.about.text": "I'm a <strong>Cybersecurity Engineering</strong> student at <strong>Politecnico di Torino</strong>. I'm passionate about cybersecurity, real-time operating systems, and building robust, high-performance software.",
+    "home.about.text": "I'm a <strong>Cybersecurity Engineering</strong> student at <strong>Politecnico di Torino</strong>, focused on cloud and application security, runtime threat detection, and secure software architecture.",
     "home.about.link": "Learn more",
 
     // Home — Projects preview
@@ -110,13 +113,14 @@ export const translations: Record<Lang, Record<string, string>> = {
     "about.heading": "About Me",
     "about.heading.sub": "Something about me",
     "about.bio.1": "Hi! I'm <strong>Gianmarco Fabbri</strong>, a <strong>Cybersecurity Engineering</strong> student at <strong>Politecnico di Torino</strong>.",
-    "about.bio.2": "I'm passionate about cloud security, crime analysis, and artificial intelligence. Tackling complex problems pushes me to do my best, and I strive to find elegant and efficient solutions.",
-    "about.bio.3": "In my free time I explore new tools and keep up with the latest news in the cybersecurity field.",
+    "about.bio.2": "I focus on cloud and application security, runtime threat detection, and secure software architecture. I build full-stack web applications with a security-first approach, from authentication and access control to containerized deployment.",
+    "about.bio.3": "I'm interested in bridging software engineering and offensive/defensive security, and in applying AI to cybersecurity.",
     "about.skills.title": "Skills",
     "about.skills.subtitle": "Technologies and tools I use",
     "about.skills.cat.languages": "Languages",
     "about.skills.cat.cyber": "Cybersecurity",
-    "about.skills.cat.tools": "Tools & Frameworks",
+    "about.skills.cat.frameworks": "Frameworks & Libraries",
+    "about.skills.cat.tools": "Databases & Tools",
     "about.edu.title": "Education",
     "about.edu.subtitle": "My academic path",
     "about.edu.1.period": "2024 — present",
@@ -126,14 +130,16 @@ export const translations: Record<Lang, Record<string, string>> = {
     "about.edu.2.period": "2021 — 2024",
     "about.edu.2.title": "Computer Science & Engineering (L-31)",
     "about.edu.2.institution": "University of Bologna",
-    "about.edu.2.desc": "Bachelor's degree in Computer Science & Engineering. Fundamentals of programming, operating systems, networks, and databases.",
+    "about.edu.2.desc": "Bachelor's degree in Computer Science & Engineering, with a thesis on lattice-based post-quantum cryptography.",
 
     // Projects page
     "projects.title": "Projects — Gianmarco Fabbri",
     "projects.heading": "Projects",
     "projects.subtitle": "A collection of my university and personal projects",
-    "projects.freertos.desc": "Timeline scheduling system for FreeRTOS with hard real-time task support, circular trace logging, and configurable overrun policies. Tested on QEMU ARM Cortex-M3.",
-    "projects.100days.desc": "Turn-based strategy game in Java with MVC architecture. Includes interactive map, soldier management, defensive towers, AI opponent, and game-save system.",
+    "projects.k8s.desc": "Academic lab for Kubernetes runtime detection and automated incident response: Falco detects suspicious syscalls, a Python handler quarantines the pod, and Cilium network policies isolate it. Includes regression tests and explicit validation limits.",
+    "projects.theater.desc": "Full-stack React and Express app for theater seat reservations, with session authentication, role-based access control, TOTP for admin actions, and transactional checks against conflicting bookings.",
+    "projects.freertos.desc": "Team project adding a periodic task layer to FreeRTOS: periodic scheduling, deadline checks, and configurable overrun policies, with a QEMU ARM Cortex-M3 demo and regression tests.",
+    "projects.100days.desc": "Java/Swing turn-based strategy game built by a four-person team. I developed soldier interactions, the AI opponent, and live statistics; the game includes procedural maps, save/load, and automated tests.",
     "projects.selfcare.desc": "Self-care e-commerce developed as a Web Technologies project. Dynamic JavaScript frontend with PHP backend and server-side data management.",
     "projects.videogame.desc": "Video game shop management app with a Python GUI and relational database. University DBMS project featuring full CRUD operations.",
     "projects.portfolio.desc": "Personal portfolio with animations, reusable components, and automatic deployment to GitHub Pages via GitHub Actions.",

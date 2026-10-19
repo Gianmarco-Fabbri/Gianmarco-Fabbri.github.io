@@ -235,6 +235,12 @@ p {
 .animate-delay-5 {
   animation-delay: 0.5s;
 }
+.animate-delay-6 {
+  animation-delay: 0.6s;
+}
+.animate-delay-7 {
+  animation-delay: 0.7s;
+}
 
 /* --- Scrollbar --- */
 ::-webkit-scrollbar {

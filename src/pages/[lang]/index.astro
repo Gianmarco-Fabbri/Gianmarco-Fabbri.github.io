@@ -3,47 +3,28 @@ import Layout from "../../layouts/Layout.astro";
 import Hero from "../../components/Hero.astro";
 import SectionHeading from "../../components/SectionHeading.astro";
 import ProjectCard from "../../components/ProjectCard.astro";
-import { t, getLocalizedPath } from "../../i18n/utils";
+import { t, getLocalizedPath, getLangPaths } from "../../i18n/utils";
 import type { Lang } from "../../i18n/utils";
+import { projects } from "../../data/profile";
 
-const lang: Lang = "it";
+export function getStaticPaths() {
+  return getLangPaths();
+}
 
-const featuredProjects = [
-  {
-    title: "FreeRTOS PTL",
-    description: t(lang, "projects.freertos.desc"),
-    tags: ["C", "FreeRTOS", "QEMU", "Embedded", "Real-Time"],
-    githubUrl: "https://github.com/Gianmarco-Fabbri/PTL-FreeRTOS",
-  },
-  {
-    title: "100 Days War",
-    description: t(lang, "projects.100days.desc"),
-    tags: ["Java", "OOP", "MVC", "Swing"],
-    githubUrl: "https://github.com/Gianmarco-Fabbri/OOP23-100DaysWar",
-  },
-  {
-    title: "Self Care E-shop",
-    description: t(lang, "projects.selfcare.desc"),
-    tags: ["PHP", "JavaScript", "CSS", "HTML"],
-    githubUrl: "https://github.com/Gianmarco-Fabbri/ProgettoWeb",
-  },
-];
+const lang = Astro.params.lang as Lang;
+
+const featuredProjects = projects.filter((p) => p.featured).map((p) => ({ ...p, description: t(lang, p.descKey) }));
 ---
 
 <Layout lang={lang}>
   <Hero lang={lang} />
 
-  <!-- About Preview -->
   <section class="section" id="about-preview">
     <div class="container">
       <SectionHeading title={t(lang, "home.about.title")} subtitle={t(lang, "home.about.subtitle")} />
       <div class="about-preview-content">
         <p set:html={t(lang, "home.about.text")} />
-        <a
-          href={getLocalizedPath(lang, "/about/")}
-          class="btn btn-outline"
-          style="margin-top: 1.5rem;"
-        >
+        <a href={getLocalizedPath(lang, "/about/")} class="btn btn-outline" style="margin-top: 1.5rem;">
           {t(lang, "home.about.link")}
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
         </a>
@@ -51,18 +32,12 @@ const featuredProjects = [
     </div>
   </section>
 
-  <!-- Featured Projects -->
   <section class="section" id="featured-projects">
     <div class="container">
       <SectionHeading title={t(lang, "home.projects.title")} subtitle={t(lang, "home.projects.subtitle")} />
       <div class="projects-grid">
         {featuredProjects.map((p) => (
-          <ProjectCard
-            title={p.title}
-            description={p.description}
-            tags={p.tags}
-            githubUrl={p.githubUrl}
-          />
+          <ProjectCard title={p.title} description={p.description} tags={p.tags} githubUrl={p.githubUrl} />
         ))}
       </div>
       <div class="projects-cta">
@@ -76,34 +51,10 @@ const featuredProjects = [
 </Layout>
 
 <style>
-  .about-preview-content {
-    max-width: 650px;
-  }
-
-  .about-preview-content p {
-    font-size: 1.1rem;
-    line-height: 1.9;
-  }
-
-  .about-preview-content :global(strong) {
-    color: #fff;
-    font-weight: 600;
-  }
-
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .projects-cta {
-    text-align: center;
-    margin-top: 2.5rem;
-  }
-
-  @media (max-width: 768px) {
-    .projects-grid {
-      grid-template-columns: 1fr;
-    }
-  }
+  .about-preview-content { max-width: 650px; }
+  .about-preview-content p { font-size: 1.1rem; line-height: 1.9; }
+  .about-preview-content :global(strong) { color: #fff; font-weight: 600; }
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+  .projects-cta { text-align: center; margin-top: 2.5rem; }
+  @media (max-width: 768px) { .projects-grid { grid-template-columns: 1fr; } }
 </style>
