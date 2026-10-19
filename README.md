@@ -13,7 +13,6 @@ Built with [Astro](https://astro.build) as a fully static site, available in Ita
 | Home     | `/it/`, `/en/`                       |
 | About    | `/it/about/`, `/en/about/`           |
 | Projects | `/it/projects/`, `/en/projects/`     |
-| Notes    | `/it/notes/`, `/en/notes/`           |
 | Contact  | `/it/contact/`, `/en/contact/`       |
 
 The root `/` redirects to the Italian version.

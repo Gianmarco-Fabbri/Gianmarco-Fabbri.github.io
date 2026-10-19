@@ -10,7 +10,6 @@ export const translations: Record<Lang, Record<string, string>> = {
     "nav.home": "Home",
     "nav.about": "Chi sono",
     "nav.projects": "Progetti",
-    "nav.notes": "Note",
     "nav.contact": "Contatti",
 
     // Hero
@@ -88,12 +87,6 @@ export const translations: Record<Lang, Record<string, string>> = {
     "contact.subtitle": "Non esitare a scrivermi",
     "contact.intro": "Puoi trovarmi attraverso i seguenti canali.",
 
-    // Notes page
-    "notes.title": "Note — Gianmarco Fabbri",
-    "notes.heading": "Note",
-    "notes.subtitle": "Appunti e riflessioni",
-    "notes.coming": "Coming Soon",
-    "notes.coming.desc": "Questa sezione è in costruzione.",
 
     // Footer
     "footer.tagline": "Cybersecurity Engineering Student · Cloud & AI Security",
@@ -108,7 +101,6 @@ export const translations: Record<Lang, Record<string, string>> = {
     "nav.home": "Home",
     "nav.about": "About",
     "nav.projects": "Projects",
-    "nav.notes": "Notes",
     "nav.contact": "Contact",
 
     // Hero
@@ -186,12 +178,6 @@ export const translations: Record<Lang, Record<string, string>> = {
     "contact.subtitle": "Don't hesitate to reach out",
     "contact.intro": "You can find me through the following channels.",
 
-    // Notes page
-    "notes.title": "Notes — Gianmarco Fabbri",
-    "notes.heading": "Notes",
-    "notes.subtitle": "Notes and reflections",
-    "notes.coming": "Coming Soon",
-    "notes.coming.desc": "This section is under construction.",
 
     // Footer
     "footer.tagline": "Cybersecurity Engineering Student · Cloud & AI Security",
