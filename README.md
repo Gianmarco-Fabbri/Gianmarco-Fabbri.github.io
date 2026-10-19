@@ -36,7 +36,7 @@ src/
 
 ## Development
 
-Requires Node.js 18.20+ (or 20.3+).
+Requires Node.js 22.22+.
 
 ```sh
 npm install
