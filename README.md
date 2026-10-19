@@ -1,46 +1,50 @@
-# Astro Starter Kit: Basics
+# Gianmarco Fabbri — Portfolio
 
-```sh
-npm create astro@latest -- --template basics
-```
+Personal portfolio of Gianmarco Fabbri, Cybersecurity Engineering student at Politecnico di Torino.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+**Live:** https://gianmarco-fabbri.github.io/
 
-## 🚀 Project Structure
+Built with [Astro](https://astro.build) as a fully static site, available in Italian and English, and deployed automatically to GitHub Pages.
 
-Inside of your Astro project, you'll see the following folders and files:
+## Pages
+
+| Page     | Path                                 |
+| :------- | :----------------------------------- |
+| Home     | `/it/`, `/en/`                       |
+| About    | `/it/about/`, `/en/about/`           |
+| Projects | `/it/projects/`, `/en/projects/`     |
+| Notes    | `/it/notes/`, `/en/notes/`           |
+| Contact  | `/it/contact/`, `/en/contact/`       |
+
+The root `/` redirects to the Italian version.
+
+## Project structure
 
 ```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+src/
+├── components/   # Navbar, Hero, Footer, ProjectCard, SectionHeading, SkillBadge
+├── i18n/         # translations.ts (IT/EN strings) and utils.ts (t(), localized paths)
+├── layouts/      # Layout.astro (head, navbar, footer)
+├── pages/
+│   ├── index.astro   # redirect to /it/
+│   ├── it/           # Italian pages
+│   └── en/           # English pages
+└── styles/       # global.css (theme variables, buttons, animations)
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+All user-facing text lives in `src/i18n/translations.ts`; each page sets its language and reads strings with `t(lang, "key")`.
 
-## 🧞 Commands
+## Development
 
-All commands are run from the root of the project, from a terminal:
+Requires Node.js 18.20+ (or 20.3+).
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+```sh
+npm install
+npm run dev       # dev server at http://localhost:4321
+npm run build     # static build in ./dist
+npm run preview   # serve the build locally
+```
 
-## 👀 Want to learn more?
+## Deployment
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Every push to `main` runs [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), which builds the site with `withastro/action` and publishes it to GitHub Pages.
