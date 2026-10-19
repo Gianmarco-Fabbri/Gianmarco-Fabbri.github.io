@@ -18,6 +18,7 @@ const description = Astro.props.description ?? t(lang, "meta.description");
 const pagePath = getPagePath(Astro.url);
 const urlFor = (l: Lang) => new URL(getLocalizedPath(l, pagePath), Astro.site).href;
 const alternates = (["it", "en"] as const).map((l) => ({ lang: l, href: urlFor(l) }));
+const ogImage = new URL("/og-image.png", Astro.site).href;
 ---
 
 <!doctype html>
@@ -37,6 +38,16 @@ const alternates = (["it", "en"] as const).map((l) => ({ lang: l, href: urlFor(l
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Gianmarco Fabbri" />
+    <meta property="og:url" content={urlFor(lang)} />
+    <meta property="og:locale" content={lang === "it" ? "it_IT" : "en_US"} />
+    <meta property="og:locale:alternate" content={lang === "it" ? "en_US" : "it_IT"} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Gianmarco Fabbri — Cloud Infrastructure & AI Security" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={ogImage} />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
