@@ -8,6 +8,7 @@ export interface Project {
   title: string;
   descKey: string;
   tags: string[];
+  year: string;
   githubUrl: string;
   featured?: boolean;
 }
@@ -16,6 +17,7 @@ export const projects: Project[] = [
   {
     title: "Kubernetes Runtime Security & Incident Response Lab",
     descKey: "projects.k8s.desc",
+    year: "2026",
     tags: ["Kubernetes", "Falco", "Cilium", "Python", "Docker", "CI/CD"],
     githubUrl: `${github}/Kubernetes-Incident-Response`,
     featured: true,
@@ -23,6 +25,7 @@ export const projects: Project[] = [
   {
     title: "Theater Booking System",
     descKey: "projects.theater.desc",
+    year: "2026",
     tags: ["React", "Node.js", "Express", "SQLite", "RBAC", "2FA/TOTP"],
     githubUrl: `${github}/Theater-Booking-System`,
     featured: true,
@@ -30,6 +33,7 @@ export const projects: Project[] = [
   {
     title: "PTL – Periodic Task Layer for FreeRTOS",
     descKey: "projects.freertos.desc",
+    year: "2026",
     tags: ["C", "FreeRTOS", "ARM Cortex-M3", "QEMU", "Real-Time"],
     githubUrl: `${github}/PTL-FreeRTOS`,
     featured: true,
@@ -37,24 +41,28 @@ export const projects: Project[] = [
   {
     title: "100 Days War",
     descKey: "projects.100days.desc",
+    year: "2024–2025",
     tags: ["Java 21", "Swing", "MVC", "Design Patterns", "Gradle"],
     githubUrl: `${github}/OOP23-100DaysWar`,
   },
   {
     title: "Benessere Market – Web E-commerce",
     descKey: "projects.benessere.desc",
+    year: "2024–2025",
     tags: ["PHP", "MySQL", "JavaScript", "Bootstrap"],
     githubUrl: `${github}/BenessereMarket`,
   },
   {
     title: "Videogame Planet Shop",
     descKey: "projects.videogame.desc",
+    year: "2024",
     tags: ["MySQL", "SQL", "Python", "Tkinter"],
     githubUrl: `${github}/VideogamePlanetShop`,
   },
   {
     title: "Portfolio Website",
     descKey: "projects.portfolio.desc",
+    year: "2026",
     tags: ["Astro", "TypeScript", "CSS", "GitHub Actions"],
     githubUrl: `${github}/Gianmarco-Fabbri.github.io`,
   },

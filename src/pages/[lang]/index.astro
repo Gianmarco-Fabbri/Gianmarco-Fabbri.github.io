@@ -37,7 +37,7 @@ const featuredProjects = projects.filter((p) => p.featured).map((p) => ({ ...p, 
       <SectionHeading title={t(lang, "home.projects.title")} subtitle={t(lang, "home.projects.subtitle")} />
       <div class="projects-grid">
         {featuredProjects.map((p) => (
-          <ProjectCard title={p.title} description={p.description} tags={p.tags} githubUrl={p.githubUrl} />
+          <ProjectCard title={p.title} description={p.description} tags={p.tags} year={p.year} githubUrl={p.githubUrl} />
         ))}
       </div>
       <div class="projects-cta">

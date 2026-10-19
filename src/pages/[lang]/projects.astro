@@ -22,7 +22,7 @@ const projects = allProjects.map((p) => ({ ...p, description: t(lang, p.descKey)
       <div class="projects-grid">
         {projects.map((p, i) => (
           <div class={`animate-in animate-delay-${i + 1}`}>
-            <ProjectCard title={p.title} description={p.description} tags={p.tags} githubUrl={p.githubUrl} />
+            <ProjectCard title={p.title} description={p.description} tags={p.tags} year={p.year} githubUrl={p.githubUrl} />
           </div>
         ))}
       </div>
