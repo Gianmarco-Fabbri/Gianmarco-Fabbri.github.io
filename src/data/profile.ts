@@ -16,40 +16,40 @@ export const projects: Project[] = [
   {
     title: "Kubernetes Runtime Security & Incident Response Lab",
     descKey: "projects.k8s.desc",
-    tags: ["Kubernetes", "Falco", "Cilium", "Python", "Docker"],
+    tags: ["Kubernetes", "Falco", "Cilium", "Python", "Docker", "CI/CD"],
     githubUrl: `${github}/Kubernetes-Incident-Response`,
     featured: true,
   },
   {
     title: "Theater Booking System",
     descKey: "projects.theater.desc",
-    tags: ["React", "Express", "SQLite", "Passport.js", "TOTP"],
+    tags: ["React", "Node.js", "Express", "SQLite", "RBAC", "2FA/TOTP"],
     githubUrl: `${github}/Theater-Booking-System`,
     featured: true,
   },
   {
-    title: "Periodic Task Layer for FreeRTOS",
+    title: "PTL – Periodic Task Layer for FreeRTOS",
     descKey: "projects.freertos.desc",
-    tags: ["C", "FreeRTOS", "QEMU", "Embedded", "Real-Time"],
+    tags: ["C", "FreeRTOS", "ARM Cortex-M3", "QEMU", "Real-Time"],
     githubUrl: `${github}/PTL-FreeRTOS`,
     featured: true,
   },
   {
     title: "100 Days War",
     descKey: "projects.100days.desc",
-    tags: ["Java", "Swing", "MVC", "Gradle"],
+    tags: ["Java 21", "Swing", "MVC", "Design Patterns", "Gradle"],
     githubUrl: `${github}/OOP23-100DaysWar`,
   },
   {
-    title: "Self Care E-shop",
-    descKey: "projects.selfcare.desc",
-    tags: ["PHP", "JavaScript", "CSS", "HTML"],
+    title: "Benessere Market – Web E-commerce",
+    descKey: "projects.benessere.desc",
+    tags: ["PHP", "MySQL", "JavaScript", "Bootstrap"],
     githubUrl: `${github}/BenessereMarket`,
   },
   {
     title: "Videogame Planet Shop",
     descKey: "projects.videogame.desc",
-    tags: ["Python", "SQL", "Database", "GUI"],
+    tags: ["MySQL", "SQL", "Python", "Tkinter"],
     githubUrl: `${github}/VideogamePlanetShop`,
   },
   {
@@ -60,30 +60,55 @@ export const projects: Project[] = [
   },
 ];
 
-/** Skill categories, keyed by the translation key of the category title. */
-export const skills: Record<string, string[]> = {
-  "about.skills.cat.languages": ["Python", "Java", "C", "C#", "JavaScript", "PHP", "SQL"],
-  "about.skills.cat.cyber": [
-    "Cloud Security",
-    "Application Security",
-    "Runtime Threat Detection",
-    "Incident Response",
-    "Access Control & 2FA",
-    "Post-Quantum Cryptography",
-  ],
-  "about.skills.cat.frameworks": ["React", "Node.js", "Express", "ASP.NET", "Blazor", "MudBlazor", "Astro"],
-  "about.skills.cat.tools": [
-    "Docker",
+/** A skill is shown as-is, or translated when given as { key }. */
+export type Skill = string | { key: string };
+
+/** Skill categories (same grouping as the CV), keyed by the translation key of the category title. */
+export const skills: Record<string, Skill[]> = {
+  "about.skills.cat.cloud": [
     "Kubernetes",
-    "Falco",
+    "Docker",
+    "Linux",
+    "eBPF / Falco",
     "Cilium",
-    "MySQL",
-    "SQLite",
-    "FreeRTOS",
-    "QEMU",
-    "Git",
-    "Gradle",
-    "LaTeX",
+    "CI/CD",
+    "Microservices / REST APIs",
+  ],
+  "about.skills.cat.security": [
+    "Threat Modeling",
+    "API Security",
+    "SAST",
+    "OWASP Top 10",
+    "TCP/IP",
+    "Wireshark",
+    "Burp Suite",
+  ],
+  "about.skills.cat.crypto": [
+    "RSA / ECC",
+    { key: "about.skills.signatures" },
+    { key: "about.skills.hash" },
+    "Lattice-Based PQC (Dilithium, Kyber)",
+    "PKI",
+    "Verifiable Credentials",
+  ],
+  "about.skills.cat.dev": [
+    "Python",
+    "C# / .NET Core",
+    "ASP.NET",
+    "Blazor WebAssembly",
+    "Java",
+    "C / C++",
+    "SQL",
+    "PHP",
+    "JavaScript",
+    "React",
+    "Node.js / Express",
+    "Bash",
+  ],
+  "about.skills.cat.spoken": [
+    { key: "about.skills.lang.it" },
+    { key: "about.skills.lang.en" },
+    { key: "about.skills.lang.fr" },
   ],
 };
 
