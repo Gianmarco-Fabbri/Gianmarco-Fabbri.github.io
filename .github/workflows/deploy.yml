@@ -21,8 +21,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
-      - name: Install, build, and upload
-        uses: withastro/action@v6
+      # Static site: publish the repository files as they are
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: .
 
   deploy:
     needs: build
