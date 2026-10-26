@@ -1,50 +1,37 @@
-# Gianmarco Fabbri — Portfolio
+# Gianmarco Fabbri — Personal Website
 
-Personal portfolio of Gianmarco Fabbri, Cybersecurity Engineering student at Politecnico di Torino.
+Personal website of Gianmarco Fabbri, M.Sc. Cybersecurity Engineering student at Politecnico di Torino.
 
 **Live:** https://gianmarco-fabbri.github.io/
 
-Built with [Astro](https://astro.build) as a fully static site, available in Italian and English, and deployed automatically to GitHub Pages.
+A single static HTML page with no build step: a fixed sidebar (photo, contacts, navigation) and a content column with About, Education, Experience, Projects and Skills. The layout is inspired by [Marios Kogias' academic website](https://github.com/marioskogias/marioskogias.github.io); the code is written from scratch.
 
-## Pages
-
-| Page     | Path                                 |
-| :------- | :----------------------------------- |
-| Home     | `/it/`, `/en/`                       |
-| About    | `/it/about/`, `/en/about/`           |
-| Projects | `/it/projects/`, `/en/projects/`     |
-| Contact  | `/it/contact/`, `/en/contact/`       |
-
-The root `/` redirects to the Italian version.
-
-## Project structure
+## Structure
 
 ```text
-src/
-├── components/   # Navbar, Hero, Footer, ProjectCard, SectionHeading, SkillBadge
-├── data/         # profile.ts (projects, skills, contacts, links)
-├── i18n/         # translations.ts (IT/EN strings) and utils.ts (t(), localized paths)
-├── layouts/      # Layout.astro (head, navbar, footer)
-├── pages/
-│   ├── index.astro   # redirect to /it/
-│   └── [lang]/       # each page is generated once per language (/it/, /en/)
-└── styles/       # global.css (theme variables, buttons, animations)
+index.html                # the whole site
+css/style.css             # styles (colors and fonts are variables in :root)
+img/                      # profile photo, social preview image, touch icon
+docs/                     # CV (PDF) linked from the sidebar
+favicon.svg
+404.html                  # not-found page; sends old /it/ and /en/ links to the home page
+robots.txt, sitemap.xml
 ```
 
-- **Text:** all user-facing strings live in `src/i18n/translations.ts`; pages read them with `t(lang, "key")`.
-- **Content:** projects, skills and contacts live in `src/data/profile.ts`. To add a project, add an entry there plus its `projects.<id>.desc` string in both languages; set `featured: true` to show it on the home page.
+## Editing
 
-## Development
+- **Content:** edit `index.html` directly. Each project is a `<div class="project">` block inside `#projects`; copy one to add a new project.
+- **CV:** replace `docs/Gianmarco-Fabbri-CV.pdf` (the published version has no phone number).
+- **Last updated:** update the date in the footer of `index.html` and `<lastmod>` in `sitemap.xml`.
 
-Requires Node.js 22.22+.
+## Local preview
 
 ```sh
-npm install
-npm run dev       # dev server at http://localhost:4321
-npm run build     # static build in ./dist
-npm run preview   # serve the build locally
+python3 -m http.server 8000
 ```
+
+Then open http://localhost:8000.
 
 ## Deployment
 
-Every push to `main` runs [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), which builds the site with `withastro/action` and publishes it to GitHub Pages.
+Every push to `main` runs [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), which uploads the repository files as they are to GitHub Pages (hidden files and folders are not published).
