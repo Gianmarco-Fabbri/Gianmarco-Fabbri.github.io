@@ -11,7 +11,7 @@ A single static HTML page with no build step: a fixed sidebar (photo, contacts, 
 ```text
 index.html                # the whole site
 css/style.css             # styles (colors and fonts are variables in :root)
-img/                      # profile photo, social preview image, touch icon
+img/                      # profile photo, social preview image (JPEG), touch icon
 docs/                     # CV (PDF) linked from the sidebar
 favicon.svg
 404.html                  # not-found page; sends old /it/ and /en/ links to the home page
@@ -34,4 +34,4 @@ Then open http://localhost:8000.
 
 ## Deployment
 
-Every push to `main` runs [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), which uploads the repository files as they are to GitHub Pages (hidden files and folders are not published).
+Every push to `main` runs [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), which copies only the website files (`index.html`, `404.html`, `favicon.svg`, `robots.txt`, `sitemap.xml`, `css/`, `img/`, `docs/`) and publishes them to GitHub Pages. If you add a new top-level file or folder to the site, add it to that list too.

@@ -21,11 +21,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
-      # Static site: publish the repository files as they are
+      # Static site, no build: publish only the website files
+      - name: Collect site files
+        run: |
+          mkdir _site
+          cp -r index.html 404.html favicon.svg robots.txt sitemap.xml css img docs _site/
+
       - name: Upload site
         uses: actions/upload-pages-artifact@v5
         with:
-          path: .
+          path: _site
 
   deploy:
     needs: build
